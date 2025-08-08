@@ -344,6 +344,10 @@ def build_fonts() -> None:
         try:
             print(f"[INFO] {style} 폰트 처리 중: {os.path.basename(ko_font_path)} + {os.path.basename(en_font_path)}")
             
+            # 폰트 파일 정리
+            clean_font_file(ko_font_path)
+            clean_font_file(en_font_path)
+            
             # 한글 폰트 로드 및 처리
             ko_font = fontforge.open(ko_font_path)
             scale_font_em_units(ko_font, TARGET_EM)
@@ -360,6 +364,19 @@ def build_fonts() -> None:
         except Exception as e:
             print(f"[ERROR] {style} 폰트 처리 중 오류 발생: {e}")
             continue
+
+
+def clean_font_file(font_path: str) -> None:
+    """
+    폰트 파일을 열고 다시 저장하여 잠재적인 문제를 해결합니다.
+    """
+    try:
+        font = fontforge.open(font_path)
+        font.generate(font_path)
+        font.close()
+        print(f"[INFO] {os.path.basename(font_path)} 파일 정리 완료")
+    except Exception as e:
+        print(f"[ERROR] {os.path.basename(font_path)} 파일 정리 중 오류 발생: {e}")
 
 
 if __name__ == "__main__":

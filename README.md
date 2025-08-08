@@ -74,12 +74,12 @@ exit
 
 ```bash
 # Docker 이미지 복제 및 빌드
-git clone https://github.com/partrita/FiraD2.git
-cd FiraD2
-docker build -t firad2 .
+git clone https://github.com/partrita/MLD2.git
+cd MLD2
+docker build -t fontbuilder .
 
 # 대화형 컨테이너 실행
-docker run -it -v "$(pwd)":/app firad2
+docker run -it -v "$(pwd)":/app fontbuilder
 
 # 컨테이너 내부: 글꼴 빌드
 python3 scripts/build.py build
