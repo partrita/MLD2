@@ -63,7 +63,7 @@ class TestFontBuildProcess(unittest.TestCase):
                         print(f"  - {ttf_file}")
 
     def test_font_weights(self):
-        """Regular와 Bold 폰트가 각 디렉터리에 있는지 테스트"""
+        """Regular와 Italic 폰트가 각 디렉터리에 있는지 테스트"""
         print("\n=== 폰트 웨이트 테스트 ===")
         
         font_dirs = {
@@ -72,7 +72,7 @@ class TestFontBuildProcess(unittest.TestCase):
             "Nerd Font": EN_NERD_FONT_PATH
         }
         
-        expected_weights = ['regular', 'bold']
+        expected_weights = ['regular', 'italic']
         
         for name, path in font_dirs.items():
             with self.subTest(directory=name):
@@ -152,8 +152,8 @@ class TestFontBuildProcess(unittest.TestCase):
             # find_font_files 함수 테스트
             if os.path.exists(EN_FONT_PATH):
                 regular_files = find_font_files(EN_FONT_PATH, "regular")
-                bold_files = find_font_files(EN_FONT_PATH, "bold")
-                print(f"✓ find_font_files 테스트 성공 (Regular: {len(regular_files)}, Bold: {len(bold_files)})")
+                italic_files = find_font_files(EN_FONT_PATH, "italic")
+                print(f"✓ find_font_files 테스트 성공 (Regular: {len(regular_files)}, Italic: {len(italic_files)})")
             
         except ImportError as e:
             self.fail(f"hangulify 모듈 임포트 실패: {e}")

@@ -1,4 +1,4 @@
-# FiraD2 - 한글을 지원하는 FiraCode
+# FiraD2 - 한글을 지원하는 MonoLisa
 
 [English](README_en.md) | [한국어](README_ko.md)
 
@@ -6,29 +6,20 @@
 ![License](https://img.shields.io/github/license/partrita/FiraD2?style=flat-square)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/partrita/FiraD2/release-font.yml?style=flat-square)
 
-**FiraD2**는 FiraCode의 합자(ligature) 및 코딩 기능과 D2Coding의 뛰어난 한글 지원을 결합한 프로그래밍 글꼴입니다. 이 글꼴은 영문과 한글 텍스트가 모두 포함된 코드에 최적의 가독성을 제공합니다.
+**FiraD2**는 MonoLisa의 합자(ligature) 및 코딩 기능과 D2Coding의 뛰어난 한글 지원을 결합한 프로그래밍 글꼴입니다. 이 글꼴은 영문과 한글 텍스트가 모두 포함된 코드에 최적의 가독성을 제공합니다.
 
 ## ✨ 특징
 
 - **완벽한 한글 지원**: D2Coding의 한글 글리프(U+3131-U+318E, U+AC00-U+D7A3)를 포함합니다.
-- **프로그래밍 합자**: FiraCode의 인기 있는 프로그래밍 합자(→, >=, != 등)를 유지합니다.
+- **프로그래밍 합자**: MonoLisa의 인기 있는 프로그래밍 합자(→, >=, != 등)를 유지합니다.
 - **다양한 버전**: 일반 글꼴, 아이콘이 포함된 Nerd Font 버전, 웹 폰트를 제공합니다.
 - **최적화된 간격**: 가독성 향상을 위해 문자 너비를 세심하게 조정했습니다.
 - **크로스플랫폼**: Windows, macOS, Linux에서 작동합니다.
 
+
 ## 📥 다운로드
 
 [Releases](https://github.com/partrita/FiraD2/releases) 페이지에서 최신 글꼴을 다운로드하세요.
-
-### 글꼴 버전 설명
-
-| 파일 | 설명 | 추천 환경 |
-|------|-------------|----------|
-| `FiraD2-Regular.ttf` | 일반용 기본 글꼴 | 코드 에디터, IDE |
-| `FiraD2-Bold.ttf` | 굵은 글꼴 | 강조, 헤더 |
-| `FiraD2-Regular.woff2` | 웹 폰트 형식 | 웹 애플리케이션 |
-| `FiraD2NerdFont-Regular.ttf` | 프로그래밍 아이콘 포함 | 터미널, Vim/Neovim |
-| `FiraD2NerdFont-Bold.ttf` | 아이콘 포함 굵은 글꼴 | 터미널 강조 |
 
 ### 설치
 
@@ -120,14 +111,14 @@ git clone https://github.com/partrita/FiraD2.git
 cd FiraD2
 
 # 필요한 글꼴 에셋 다운로드 (수동으로 진행해야 합니다)
-# - FiraCode: https://github.com/tonsky/FiraCode/releases
+# - MonoLisa: https://github.com/tonsky/MonoLisa/releases
 # - D2Coding: https://github.com/naver/d2codingfont/releases
-# - FiraCode NerdFont: https://github.com/ryanoasis/nerd-fonts/releases
+# - MonoLisa NerdFont: https://github.com/ryanoasis/nerd-fonts/releases
 
 # assets/ 디렉토리에 글꼴 압축 해제:
-# assets/en_font/        - FiraCode TTF 파일
+# assets/en_font/        - MonoLisa TTF 파일
 # assets/ko_font/        - D2Coding TTF 파일
-# assets/en_nerd_font/   - FiraCode NerdFont TTF 파일
+# assets/en_nerd_font/   - MonoLisa NerdFont TTF 파일
 
 # 글꼴 빌드
 python3 scripts/build.py build
@@ -199,9 +190,9 @@ code, pre {
 ## 📋 요구사항
 
 ### 소스 글꼴
-- **FiraCode**: 합자를 포함한 기본 프로그래밍 글꼴
+- **MonoLisa**: 합자를 포함한 기본 프로그래밍 글꼴
 - **D2Coding**: 한글 지원을 위한 한국어 코딩 글꼴
-- **FiraCode Nerd Font**: 아이콘이 추가된 버전
+- **MonoLisa Nerd Font**: 아이콘이 추가된 버전
 
 ### 빌드 종속성
 - Python 3.7+
@@ -219,13 +210,13 @@ code, pre {
 이 프로젝트는 [SIL Open Font License 1.1](LICENSE)에 따라 라이선스가 부여됩니다.
 
 ### 글꼴 라이선스
-- **FiraCode**: SIL OFL 1.1
+- **MonoLisa**: SIL OFL 1.1
 - **D2Coding**: SIL OFL 1.1
 - **Nerd Fonts**: MIT License
 
 ## 🙏 감사
 
-- [FiraCode](https://github.com/tonsky/FiraCode) - Nikita Prokopov
+- [MonoLisa](https://github.com/tonsky/MonoLisa) - Nikita Prokopov
 - [D2Coding](https://github.com/naver/d2codingfont) - NAVER
 - [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) 프로젝트
 

@@ -18,7 +18,7 @@ from config import (
 BEARING_ADJUSTMENT: int = 200
 
 # TARGET em 단위, 키울수록 D2Coding 폰트(기본 1000)가 더 커집니다.
-TARGET_EM: int = 1400
+TARGET_EM: int = 1000
 
 
 def _get_cleaned_name(name: str) -> str:
@@ -111,8 +111,8 @@ def get_font_style(font: fontforge.font, original_filename: str = None) -> str:
 
     if hasattr(font, "weight") and font.weight:
         weight = font.weight.lower()
-        if "bold" in weight:
-            style_parts.append("Bold")
+        if "italic" in weight:
+            style_parts.append("Italic")
         elif "light" in weight:
             style_parts.append("Light")
         elif "medium" in weight:
@@ -125,9 +125,9 @@ def get_font_style(font: fontforge.font, original_filename: str = None) -> str:
         if (
             hasattr(font, "os2_weight")
             and font.os2_weight >= 700
-            and "Bold" not in style_parts
+            and "Italic" not in style_parts
         ):
-            style_parts.append("Bold")
+            style_parts.append("Italic")
     except Exception:
         pass
 
@@ -281,7 +281,7 @@ def find_font_files(directory: str, weight: str = None) -> list:
     
     Args:
         directory: 폰트 파일을 찾을 디렉터리
-        weight: 찾을 폰트 웨이트 ("Regular" 또는 "Bold")
+        weight: 찾을 폰트 웨이트 ("Regular" 또는 "Italic")
         
     Returns:
         폰트 파일 경로의 리스트
@@ -303,13 +303,11 @@ def find_font_files(directory: str, weight: str = None) -> list:
 def build_fonts() -> None:
     """
     메인 폰트 빌드 프로세스입니다.
-    새로운 디렉터리 구조에서 Regular와 Bold 폰트를 로드하고 병합합니다.
+    새로운 디렉터리 구조에서 Regular와 Italic 폰트를 로드하고 병합합니다.
     """
     os.makedirs(BUILT_FONTS_PATH, exist_ok=True)
 
-    # 한글 폰트 로드
     ko_regular_files = find_font_files(KO_FONT_PATH, "regular")
-    ko_bold_files = find_font_files(KO_FONT_PATH, "bold")
     
     if not ko_regular_files:
         print(f"[ERROR] {KO_FONT_PATH}에서 Regular 한글 폰트를 찾을 수 없습니다.")
@@ -317,18 +315,18 @@ def build_fonts() -> None:
     
     # 영문 폰트 로드
     en_regular_files = find_font_files(EN_FONT_PATH, "regular")
-    en_bold_files = find_font_files(EN_FONT_PATH, "bold")
+    en_italic_files = find_font_files(EN_FONT_PATH, "italic")
     
     # 너드 폰트 로드
     nerd_regular_files = find_font_files(EN_NERD_FONT_PATH, "regular")
-    nerd_bold_files = find_font_files(EN_NERD_FONT_PATH, "bold")
+    nerd_italic_files = find_font_files(EN_NERD_FONT_PATH, "italic")
     
     # 폰트 조합 정의
     font_combinations = [
         ("Regular", ko_regular_files, en_regular_files, False),
-        ("Bold", ko_bold_files, en_bold_files, False),
+        ("Italic", ko_regular_files, en_italic_files, False),
         ("NerdFont-Regular", ko_regular_files, nerd_regular_files, True),
-        ("NerdFont-Bold", ko_bold_files, nerd_bold_files, True),
+        ("NerdFont-Italic", ko_regular_files, nerd_italic_files, True),
     ]
     
     for style, ko_files, en_files, is_nerd_font in font_combinations:

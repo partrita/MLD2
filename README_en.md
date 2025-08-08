@@ -1,15 +1,15 @@
-# FiraD2 - FiraCode with Korean Hangul Support
+# FiraD2 - MonoLisa with Korean Hangul Support
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/partrita/FiraD2?style=flat-square)
 ![License](https://img.shields.io/github/license/partrita/FiraD2?style=flat-square)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/partrita/FiraD2/release-font.yml?style=flat-square)
 
-**FiraD2** is a programming font that combines the best of FiraCode's ligatures and coding features with D2Coding's excellent Korean Hangul support. This font provides optimal readability for code that includes both English and Korean text.
+**FiraD2** is a programming font that combines the best of MonoLisa's ligatures and coding features with D2Coding's excellent Korean Hangul support. This font provides optimal readability for code that includes both English and Korean text.
 
 ## ✨ Features
 
 - **Perfect Korean Support**: Incorporates D2Coding's Hangul glyphs (U+3131-U+318E, U+AC00-U+D7A3)
-- **Programming Ligatures**: Maintains FiraCode's popular programming ligatures (→, >=, !=, etc.)
+- **Programming Ligatures**: Maintains MonoLisa's popular programming ligatures (→, >=, !=, etc.)
 - **Multiple Variants**: Regular fonts, Nerd Font versions with icons, and web fonts
 - **Optimized Spacing**: Carefully adjusted character widths for better readability
 - **Cross-platform**: Works on Windows, macOS, and Linux
@@ -118,14 +118,14 @@ git clone https://github.com/partrita/FiraD2.git
 cd FiraD2
 
 # Download required font assets (you'll need to do this manually)
-# - FiraCode: https://github.com/tonsky/FiraCode/releases
+# - MonoLisa: https://github.com/tonsky/MonoLisa/releases
 # - D2Coding: https://github.com/naver/d2codingfont/releases  
-# - FiraCode NerdFont: https://github.com/ryanoasis/nerd-fonts/releases
+# - MonoLisa NerdFont: https://github.com/ryanoasis/nerd-fonts/releases
 
 # Extract fonts to assets/ directories:
-# assets/en_font/        - FiraCode TTF files
+# assets/en_font/        - MonoLisa TTF files
 # assets/ko_font/        - D2Coding TTF files  
-# assets/en_nerd_font/   - FiraCode NerdFont TTF files
+# assets/en_nerd_font/   - MonoLisa NerdFont TTF files
 
 # Build fonts
 python3 scripts/build.py build
@@ -197,9 +197,9 @@ The `scripts/config.py` file contains build configuration options:
 ## 📋 Requirements
 
 ### Source Fonts
-- **FiraCode**: Base programming font with ligatures
+- **MonoLisa**: Base programming font with ligatures
 - **D2Coding**: Korean coding font for Hangul support
-- **FiraCode Nerd Font**: Icon-enhanced variant
+- **MonoLisa Nerd Font**: Icon-enhanced variant
 
 ### Build Dependencies
 - Python 3.7+
@@ -217,13 +217,13 @@ The `scripts/config.py` file contains build configuration options:
 This project is licensed under the [SIL Open Font License 1.1](LICENSE).
 
 ### Font Licenses
-- **FiraCode**: SIL OFL 1.1
+- **MonoLisa**: SIL OFL 1.1
 - **D2Coding**: SIL OFL 1.1  
 - **Nerd Fonts**: MIT License
 
 ## 🙏 Acknowledgments
 
-- [FiraCode](https://github.com/tonsky/FiraCode) by Nikita Prokopov
+- [MonoLisa](https://github.com/tonsky/MonoLisa) by Nikita Prokopov
 - [D2Coding](https://github.com/naver/d2codingfont) by NAVER
 - [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) project
 
