@@ -1,4 +1,4 @@
-# FiraD2 - 한글을 지원하는 MonoLisa
+# MLD2 - 한글을 지원하는 MonoLisa
 
 [English](README_en.md) | [한국어](README_ko.md)
 
@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/github/license/partrita/FiraD2?style=flat-square)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/partrita/FiraD2/release-font.yml?style=flat-square)
 
-**FiraD2**는 MonoLisa의 합자(ligature) 및 코딩 기능과 D2Coding의 뛰어난 한글 지원을 결합한 프로그래밍 글꼴입니다. 이 글꼴은 영문과 한글 텍스트가 모두 포함된 코드에 최적의 가독성을 제공합니다.
+**MLD2**는 MonoLisa의 합자(ligature) 및 코딩 기능과 D2Coding의 뛰어난 한글 지원을 결합한 프로그래밍 글꼴입니다. 이 글꼴은 영문과 한글 텍스트가 모두 포함된 코드에 최적의 가독성을 제공합니다.
 
 ## ✨ 특징
 
@@ -51,7 +51,7 @@
 
 ### 방법 1: Nix 사용 (권장)
 
-모든 종속성을 관리하며 FiraD2를 빌드하는 가장 쉬운 방법입니다:
+모든 종속성을 관리하며 MLD2를 빌드하는 가장 쉬운 방법입니다:
 
 ```bash
 # 저장소 복제
@@ -141,7 +141,7 @@ python3 scripts/build.py clean
 `settings.json`에 다음을 추가하세요:
 ```json
 {
-    "editor.fontFamily": "FiraD2, Consolas, monospace",
+    "editor.fontFamily": "MLD2, Consolas, monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 14
 }
@@ -150,9 +150,9 @@ python3 scripts/build.py clean
 ### 터미널 (Nerd Font 버전 사용 시)
 ```bash
 # 글꼴 설치 확인
-fc-list | grep FiraD2
+fc-list | grep MLD2
 
-# 터미널이 FiraD2NerdFont-Regular를 사용하도록 설정
+# 터미널이 MLD2-Regular를 사용하도록 설정
 ```
 
 ### 웹 프로젝트
@@ -164,7 +164,7 @@ fc-list | grep FiraD2
 }
 
 code, pre {
-    font-family: 'FiraD2', 'Fira Code', monospace;
+    font-family: 'MLD2', 'MonoLisa', monospace;
 }
 ```
 
